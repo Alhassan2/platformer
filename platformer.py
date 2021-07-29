@@ -8,7 +8,7 @@ pygame.init()
 clock = pygame.time.Clock()
 fps = 60
 
-screen_width = 1000
+screen_width = 1100
 screen_height = 1000
 
 screen = pygame.display.set_mode((screen_width, screen_height))
@@ -189,7 +189,7 @@ class Player():
 			img_left = pygame.transform.flip(img_right, True, False)
 			self.images_right.append(img_right)
 			self.images_left.append(img_left)
-		self.dead_image = pygame.image.load('Extra animations and enemies\\Enemy sprites\\ghost_normal.png')
+		self.dead_image = pygame.image.load('Extra animations and enemies/Enemy sprites/ghost_normal.png')
 		self.image = self.images_right[self.index]
 		self.rect = self.image.get_rect()
 		self.rect.x = x
@@ -208,8 +208,8 @@ class World():
 		self.tile_list = []
 
 		#load images
-		dirt_img = pygame.image.load('Base pack\\Tiles\\grassCenter_rounded.png')
-		grass_img = pygame.image.load('Base pack\\Tiles\\grass.png')
+		dirt_img = pygame.image.load('Base pack/Tiles/grassCenter_rounded.png')
+		grass_img = pygame.image.load('Base pack/Tiles/grass.png')
 		row_count = 0
 		for row in data:
 			col_count = 0
@@ -251,7 +251,7 @@ class World():
 class Enemy(pygame.sprite.Sprite):
 	def __init__(self, x, y):
 		pygame.sprite.Sprite.__init__(self)
-		self.image = pygame.image.load('Base pack\\Enemies\\blockermad.png')
+		self.image = pygame.image.load('Base pack/Enemies/blockerMad.png')
 		self.rect = self.image.get_rect()
 		self.rect.x = x
 		self.rect.y = y
@@ -269,7 +269,7 @@ class Enemy(pygame.sprite.Sprite):
 class Lava(pygame.sprite.Sprite):
 	def __init__(self, x, y):
 		pygame.sprite.Sprite.__init__(self)
-		img = pygame.image.load('Request pack\\Tiles\\dirtCaveSpikeBottom.png')
+		img = pygame.image.load('Request pack/Tiles/dirtCaveSpikeBottom.png')
 		self.image = pygame.transform.scale(img, (tile_size, tile_size // 2))
 		self.rect = self.image.get_rect()
 		self.rect.x = x
