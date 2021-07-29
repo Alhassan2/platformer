@@ -23,10 +23,10 @@ max_levels = 7
 
 
 #load images
-bg_img = pygame.image.load('C:\\Users\\karma\\Desktop\\platformer 1\\bg.png')
-restart_img = pygame.image.load('C:\\Users\\karma\\Desktop\\platformer 1\\restart.png')
-start_img = pygame.image.load('C:\\Users\\karma\\Desktop\\platformer 1\\start.png')
-exit_img = pygame.image.load('C:\\Users\\karma\\Desktop\\platformer 1\\exit.png')
+bg_img = pygame.image.load('bg.png')
+restart_img = pygame.image.load('restart.png')
+start_img = pygame.image.load('start.png')
+exit_img = pygame.image.load('exit.png')
 
 
 #function to reset level
@@ -184,12 +184,12 @@ class Player():
 		self.index = 0
 		self.counter = 0
 		for num in range(1, 5):
-			img_right = pygame.image.load('C:\\Users\\karma\\Desktop\\platformer 1\\main3.png')
+			img_right = pygame.image.load('main3.png')
 			img_right = pygame.transform.scale(img_right, (40, 80))
 			img_left = pygame.transform.flip(img_right, True, False)
 			self.images_right.append(img_right)
 			self.images_left.append(img_left)
-		self.dead_image = pygame.image.load('C:\\Users\\karma\\Desktop\\platformer 1\\Extra animations and enemies\\Enemy sprites\\ghost_normal.png')
+		self.dead_image = pygame.image.load('Extra animations and enemies\\Enemy sprites\\ghost_normal.png')
 		self.image = self.images_right[self.index]
 		self.rect = self.image.get_rect()
 		self.rect.x = x
@@ -208,8 +208,8 @@ class World():
 		self.tile_list = []
 
 		#load images
-		dirt_img = pygame.image.load('C:\\Users\\karma\\Desktop\\platformer 1\\Base pack\\Tiles\\grassCenter_rounded.png')
-		grass_img = pygame.image.load('C:\\Users\\karma\\Desktop\\platformer 1\\Base pack\\Tiles\\grass.png')
+		dirt_img = pygame.image.load('Base pack\\Tiles\\grassCenter_rounded.png')
+		grass_img = pygame.image.load('Base pack\\Tiles\\grass.png')
 		row_count = 0
 		for row in data:
 			col_count = 0
@@ -251,7 +251,7 @@ class World():
 class Enemy(pygame.sprite.Sprite):
 	def __init__(self, x, y):
 		pygame.sprite.Sprite.__init__(self)
-		self.image = pygame.image.load('C:\\Users\\karma\\Desktop\\platformer 1\\Base pack\\Enemies\\blockermad.png')
+		self.image = pygame.image.load('Base pack\\Enemies\\blockermad.png')
 		self.rect = self.image.get_rect()
 		self.rect.x = x
 		self.rect.y = y
@@ -269,7 +269,7 @@ class Enemy(pygame.sprite.Sprite):
 class Lava(pygame.sprite.Sprite):
 	def __init__(self, x, y):
 		pygame.sprite.Sprite.__init__(self)
-		img = pygame.image.load('C:\\Users\\karma\\Desktop\\platformer 1\\Request pack\\Tiles\\dirtCaveSpikeBottom.png')
+		img = pygame.image.load('Request pack\\Tiles\\dirtCaveSpikeBottom.png')
 		self.image = pygame.transform.scale(img, (tile_size, tile_size // 2))
 		self.rect = self.image.get_rect()
 		self.rect.x = x
@@ -279,7 +279,7 @@ class Lava(pygame.sprite.Sprite):
 class Exit(pygame.sprite.Sprite):
 	def __init__(self, x, y):
 		pygame.sprite.Sprite.__init__(self)
-		img = pygame.image.load('C:\\Users\\karma\\Desktop\\platformer 1\\gate.png')
+		img = pygame.image.load('gate.png')
 		self.image = pygame.transform.scale(img, (tile_size, int(tile_size * 1.5)))
 		self.rect = self.image.get_rect()
 		self.rect.x = x
