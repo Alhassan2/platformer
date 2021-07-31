@@ -119,6 +119,7 @@ class Player():
 					self.index = 0
 				if self.direction == 1:
 					self.image = self.images_right[self.index]
+					
 				if self.direction == -1:
 					self.image = self.images_left[self.index]
 
@@ -246,6 +247,9 @@ class World():
 			screen.blit(tile[0], tile[1])
 			pygame.draw.rect(screen, (255, 255, 255), tile[1], 2)
 
+
+music = pygame.mixer.music.load('song.mp3')
+pygame.mixer.music.play(-1)
 
 
 class Enemy(pygame.sprite.Sprite):
